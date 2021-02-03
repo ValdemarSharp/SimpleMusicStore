@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SimpleMusicStore.Models;
+using SimpleMusicStore.Models.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,16 @@ namespace SimpleMusicStore.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private MusicStoreContext _musicStoreContext;
+        private FirmRepository _firmRepo;
+        public HomeController(MusicStoreContext context)
         {
-            return View();
+            _musicStoreContext = context;
+            _firmRepo = new FirmRepository(_musicStoreContext);
+        }
+        public async Task<IActionResult> Index()
+        {
+            return View(await _firmRepo.GetAllAsync());
         }
     }
 }
