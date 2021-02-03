@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace SimpleMusicStore
 {
@@ -50,6 +52,20 @@ namespace SimpleMusicStore
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            // подключаем файлы по умолчанию
+            app.UseDefaultFiles();
+            // подключаем статические файлы
+            app.UseStaticFiles();
+            // добавляем поддержку каталога node_modules
+            app.UseFileServer(new FileServerOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(env.ContentRootPath, "node_modules")
+                ),
+                RequestPath = "/node_modules",
+                EnableDirectoryBrowsing = false
             });
         }
     }
