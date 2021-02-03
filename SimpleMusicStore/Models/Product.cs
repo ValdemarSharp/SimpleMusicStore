@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SimpleMusicStore.Models
 {
-    public abstract class Product
+    public class Product
     {
         public int Id { get; set; }
 
