@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TechStarTry.Models.Enums;
+using SimpleMusicStore.Models.Enums;
 
-namespace TechStarTry.Models.MusicalInstruments
+namespace SimpleMusicStore.Models.MusicalInstruments
 {
     public class Drum : Product
     {

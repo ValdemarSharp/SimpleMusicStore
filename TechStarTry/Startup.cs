@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TechStarTry
+namespace SimpleMusicStore
 {
     public class Startup
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TechStarTry.Models.MusicalInstruments
+namespace SimpleMusicStore.Models.MusicalInstruments
 {
     public class AcousticGuitar : Product
     {
