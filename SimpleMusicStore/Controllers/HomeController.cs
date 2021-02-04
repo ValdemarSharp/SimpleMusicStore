@@ -12,14 +12,16 @@ namespace SimpleMusicStore.Controllers
     {
         private MusicStoreContext _musicStoreContext;
         private FirmRepository _firmRepo;
+        private ProductRepository _productRepo;
         public HomeController(MusicStoreContext context)
         {
             _musicStoreContext = context;
             _firmRepo = new FirmRepository(_musicStoreContext);
+            _productRepo = new ProductRepository(_musicStoreContext);
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _firmRepo.GetAllAsync());
+            return View(await _productRepo.GetAllAsync());
         }
     }
 }
