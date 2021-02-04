@@ -35,6 +35,7 @@ namespace SimpleMusicStore
             services.AddDbContext<MusicStoreContext>(options =>
                 options.UseSqlServer(connection));
             services.AddMvc();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,15 +59,6 @@ namespace SimpleMusicStore
             app.UseDefaultFiles();
             // подключаем статические файлы
             app.UseStaticFiles();
-            // добавляем поддержку каталога node_modules
-            app.UseFileServer(new FileServerOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(env.ContentRootPath, "node_modules")
-                ),
-                RequestPath = "/node_modules",
-                EnableDirectoryBrowsing = false
-            });
         }
     }
 }
