@@ -1,52 +1,14 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-.text-gray {
-    color: #aaa
-}
-
-img {
-    height: 170px;
-    width: 140px
-}
-
-.carousel img {
+﻿.carousel img {
     top: 0;
     left: 0;
     min-width: 100%;
     height: 550px;
     max-height: 550px;
     width: auto;
+}
+
+header{
+	height: 76px;
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -62,4 +24,9 @@ footer{
     position: fixed;
     bottom: 0;
   }
+}
+
+
+#carouselMusicFirms{
+	
 }
