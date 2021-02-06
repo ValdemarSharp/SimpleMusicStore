@@ -24,7 +24,14 @@ namespace SimpleMusicStore.Models.Repos
 
         public Task<List<ElectricGuitar>> GetAllAsync()
         {
+            var check = _context.ElectricGuitars.ToListAsync().Result;
             return _context.ElectricGuitars.ToListAsync();
+        }
+
+        public async Task UpdateAsync(ElectricGuitar item)
+        {
+            _context.ElectricGuitars.Update(item);
+            await _context.SaveChangesAsync();
         }
     }
 }

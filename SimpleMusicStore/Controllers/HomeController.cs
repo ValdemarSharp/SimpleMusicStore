@@ -44,9 +44,7 @@ namespace SimpleMusicStore.Controllers
             var result = new AllContent
             {
                 Products = allProducts,
-                Firms = await _firmRepo.GetAllAsync(),
-                ElectricGuitars = await _electricGuitarRepo.GetAllAsync()
-
+                Firms = await _firmRepo.GetAllAsync()
             };
             return View(result);
         }

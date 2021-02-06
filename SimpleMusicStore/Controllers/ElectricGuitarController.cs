@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SimpleMusicStore.Models;
+using SimpleMusicStore.Models.MusicalInstruments;
 using SimpleMusicStore.Models.Repos;
 using System;
 using System.Collections.Generic;
@@ -21,25 +22,28 @@ namespace SimpleMusicStore.Controllers
         }
 
         // GET: ElectricGuitarController/Edit/5
-        public async Task<ActionResult> Edit(int id)
+        public async Task<ActionResult> Edit(int? id)
         {
-            var eguitar = await _electricGuitarRepo.GetAsync(id);
-            return View(eguitar);
+            if (id != null)
+            {
+                var itemToEdit = await _electricGuitarRepo.GetAsync(id.Value);
+                if (itemToEdit != null)
+                    return View(itemToEdit);
+            }
+            return NotFound();
         }
 
         // POST: ElectricGuitarController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(ElectricGuitar item)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                await _electricGuitarRepo.UpdateAsync(item);
+                return RedirectToAction("Index", "Home");
             }
-            catch
-            {
-                return View();
-            }
+            return View(item);
         }
     }
 }

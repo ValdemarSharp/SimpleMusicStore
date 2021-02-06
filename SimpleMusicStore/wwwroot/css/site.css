@@ -7,18 +7,22 @@ header{
 	height: 76px;
 }
 
-/* Large devices (large desktops, 1200px and up) */
+/* Large devices (large desktops, 1300px and up) */
 footer{
 	background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
 /* Small devices*/
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
 
   /* Pull out the header and footer */
   footer {
     position: fixed;
     bottom: 0;
   }
+}
+
+.content-custom-container{
+	min-height: 100vh;;
 }
