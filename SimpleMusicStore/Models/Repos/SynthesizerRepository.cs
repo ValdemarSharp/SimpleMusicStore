@@ -26,5 +26,11 @@ namespace SimpleMusicStore.Models.Repos
         {
             return _context.Synthesizers.ToListAsync();
         }
+
+        public async Task UpdateAsync(Synthesizer item)
+        {
+            _context.Synthesizers.Update(item);
+            await _context.SaveChangesAsync();
+        }
     }
 }

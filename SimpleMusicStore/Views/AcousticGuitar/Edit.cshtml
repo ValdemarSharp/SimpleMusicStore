@@ -1,7 +1,7 @@
 ﻿@using SimpleMusicStore.Models.Enums
-@model SimpleMusicStore.Models.Firm
+@model SimpleMusicStore.Models.MusicalInstruments.AcousticGuitar
 @{
-    ViewBag.Title = "Редактирование музыкального бренда";
+    ViewBag.Title = "Редактирование товара";
 }
 
 @section Scripts {
@@ -9,8 +9,8 @@
 }
 
 <div class="container py-2 content-fullwindow-container">
-    <h2 class="text-center font-weight-light">Редактирование музыкального бренда</h2>
-    <form asp-action="edit" asp-controller="Firm" asp-route-id="@Model.Id">
+    <h2 class="text-center font-weight-light">Редактирование товара</h2>
+    <form asp-action="edit" asp-controller="AcousticGuitar" asp-route-id="@Model.Id">
         <div class="form-group">
             <label asp-for="Title" class="control-label">Название</label>
             <input type="text" asp-for="Title" class="form-control" />
@@ -21,6 +21,17 @@
             <textarea rows="5" type="text" asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description"></span>
         </div>
+        <div class="form-group">
+            <label asp-for="Cost" class="control-label">Цена</label>
+            <input type="text" asp-for="Cost" class="form-control" />
+            <span asp-validation-for="Cost"></span>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" asp-for="WithPickup">
+            <label asp-for="WithPickup" class="form-check-label">Со звукоснимателем?</label>
+
+        </div>
+        <input type="hidden" asp-for="PhotoUrl" />
         <div class="form-group">
             <input asp-action="Edit" type="submit" value="Сохранить" class="btn btn-success" />
             <input asp-controller="Home" asp-action="Index" type="submit" value="Отмена" class="btn btn-light" />

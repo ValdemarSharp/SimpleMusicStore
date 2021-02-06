@@ -26,5 +26,11 @@ namespace SimpleMusicStore.Models.Repos
         {
             return _context.DigitalPianos.ToListAsync();
         }
+
+        public async Task UpdateAsync(DigitalPiano item)
+        {
+            _context.DigitalPianos.Update(item);
+            await _context.SaveChangesAsync();
+        }
     }
 }

@@ -70,7 +70,7 @@
                                 <!-- Custom content-->
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                     <div class="media-body order-2 order-lg-1">
-                                        <a class="mt-0 font-weight-bold mb-2" asp-action="Edit" asp-controller="ElectricGuitar" asp-route-id="@product.Id">@product.Title</a>
+                                        <a class="mt-0 font-weight-bold mb-2" asp-action="Edit" asp-controller="@product.GetType().Name" asp-route-id="@product.Id">@product.Title</a>
                                         <p class="font-italic text-muted mb-0 small">@product.Description</p>
                                         <p class="font-italic text-muted mb-0 small">Brand: @product.Firm.Title</p>
                                         @if (product is ElectricGuitar)

@@ -26,5 +26,11 @@ namespace SimpleMusicStore.Models.Repos
         {
             return _context.AcousticGuitars.ToListAsync();
         }
+
+        public async Task UpdateAsync(AcousticGuitar item)
+        {
+            _context.AcousticGuitars.Update(item);
+            await _context.SaveChangesAsync();
+        }
     }
 }

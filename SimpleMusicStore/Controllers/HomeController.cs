@@ -13,7 +13,6 @@ namespace SimpleMusicStore.Controllers
     {
         private MusicStoreContext _musicStoreContext;
         private FirmRepository _firmRepo;
-        private ProductRepository _productRepo;
         private ElectricGuitarRepository _electricGuitarRepo;
         private AcousticGuitarRepository _acousticGuitarRepo;
         private DrumRepository _drumRepo;
@@ -41,7 +40,6 @@ namespace SimpleMusicStore.Controllers
         private void CreateAllDbRepos()
         {
             _firmRepo = new FirmRepository(_musicStoreContext);
-            _productRepo = new ProductRepository(_musicStoreContext);
             _electricGuitarRepo = new ElectricGuitarRepository(_musicStoreContext);
             _drumRepo = new DrumRepository(_musicStoreContext);
             _acousticGuitarRepo = new AcousticGuitarRepository(_musicStoreContext);
