@@ -25,14 +25,16 @@ namespace SimpleMusicStore.Models.Services
                                 Cost = 5499m,
                                 Title = "Electric Guitar Ibanez",
                                 Description = "Phasellus tristique nisi tortor, id commodo velit auctor ac. Aenean mollis euismod mauris. Sed scelerisque ex vel egestas consectetur. Nullam viverra sed orci at blandit. Duis malesuada justo eget mi convallis, ac lobortis eros facilisis. Morbi hendrerit venenatis eleifend.",
-                                Type = ElectricGuitarType.SolidBody
+                                Type = ElectricGuitarType.SolidBody,
+                                PhotoUrl = "https://www.muztorg.ru/files/2xs/6j2/6tw/auc/4gg/k4k/4s8/w48/w/2xs6j26twauc4ggk4k4s8w48w.jpg"
                             },
                             new AcousticGuitar
                             {
                                 Cost = 3499m,
                                 Title = "Acoustic Guitar Ibanez",
                                 Description = "Mauris vestibulum eu dolor sit amet semper. Etiam tempus laoreet sapien eget pretium. Donec vitae est lacinia, placerat massa vel, pulvinar elit.",
-                                WithPickup = true
+                                WithPickup = true,
+                                PhotoUrl = "https://www.muztorg.ru/files/2cu/aob/1be/074/8w8/gwo/8og/cwc/4/2cuaob1be0748w8gwo8ogcwc4.jpg"
                             }
                         }
                         
@@ -48,14 +50,16 @@ namespace SimpleMusicStore.Models.Services
                                 Cost = 3000m,
                                 Title = "Electric Guitar Fender",
                                 Description = "Phasellus tristique nisi tortor, id commodo velit auctor ac. Aenean mollis euismod mauris. Sed scelerisque ex vel egestas consectetur. Nullam viverra sed orci at blandit. Duis malesuada justo eget mi convallis, ac lobortis eros facilisis. Morbi hendrerit venenatis eleifend.",
-                                Type = ElectricGuitarType.HalfAcoustic
+                                Type = ElectricGuitarType.HalfAcoustic,
+                                PhotoUrl = "https://www.muztorg.ru/files/20c/fy6/3sk/9wg/g08/c8k/w84/wgw/g/20cfy63sk9wgg08c8kw84wgwg.jpg"
                             },
                             new ElectricGuitar
                             {
                                 Cost = 2000m,
                                 Title = "Electric Guitar Fender",
                                 Description = "Phasellus tristique nisi tortor, id commodo velit auctor ac. Aenean mollis euismod mauris. Sed scelerisque ex vel egestas consectetur. Nullam viverra sed orci at blandit. Duis malesuada justo eget mi convallis, ac lobortis eros facilisis. Morbi hendrerit venenatis eleifend.",
-                                Type = ElectricGuitarType.SolidBody
+                                Type = ElectricGuitarType.SolidBody,
+                                PhotoUrl = "https://www.muztorg.ru/files/c2f/jom/vnr/5wg/840/4oc/088/8ok/o/c2fjomvnr5wg8404oc0888oko.jpg"
                             }
                         }
 
@@ -71,21 +75,25 @@ namespace SimpleMusicStore.Models.Services
                                 Cost = 8000,
                                 Title = "Digital Piano Yamaha",
                                 Description = "Mauris vestibulum eu dolor sit amet semper. Etiam tempus laoreet sapien eget pretium. Donec vitae est lacinia, placerat massa vel, pulvinar elit.",
-                                Type = DigitalPianoType.Сoncert
+                                Type = DigitalPianoType.Сoncert,
+                                PhotoUrl = "https://www.muztorg.ru/files/3qr/xq7/pwp/vy8/0gg/oc8/0ko/ow0/o/3qrxq7pwpvy80ggoc80koow0o.jpg"
                             },
                             new Synthesizer
                             {
                                 Cost = 2000,
                                 Title = "Synthesizer Yamaha",
                                 Description = "Mauris vestibulum eu dolor sit amet semper. Etiam tempus laoreet sapien eget pretium. Donec vitae est lacinia, placerat massa vel, pulvinar elit.",
-                                Type = SynthesizerType.Standart
+                                Type = SynthesizerType.Standart,
+                                PhotoUrl = "https://www.muztorg.ru/files/d3t/0f9/nk2/sgg/88c/w4w/k08/o0o/o/d3t0f9nk2sgg88cw4wk08o0oo.jpg"
                             },
                             new Drum
                             {
                                 Cost = 7000m,
-                                Title = "Drum Yamaha",
+                                Title = "Drums Yamaha",
                                 Description = "Mauris vestibulum eu dolor sit amet semper. Etiam tempus laoreet sapien eget pretium. Donec vitae est lacinia, placerat massa vel, pulvinar elit.",
-                                Type = DrumType.Electronic
+                                Type = DrumType.Acoustic,
+                                PhotoUrl = "https://www.muztorg.ru/files/97k/m1d/cxp/d8o/0ks/884/kwg/o48/4/97km1dcxpd8o0ks884kwgo484.jpg"
+
                             }
                             
                         }

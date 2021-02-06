@@ -15,6 +15,8 @@ namespace SimpleMusicStore.Models
 
         public string Description { get; set; }
 
-        public ICollection<Firm> Firms { get; set; }
+        public string PhotoUrl { get; set; }
+
+        public Firm Firm { get; set; }
     }
 }

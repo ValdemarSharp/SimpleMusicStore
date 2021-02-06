@@ -1,5 +1,6 @@
 ﻿@using SimpleMusicStore.Models.ViewModels
 @using SimpleMusicStore.Models.Enums
+@using SimpleMusicStore.Models.MusicalInstruments
 @using SimpleMusicStore.Helpers
 @using System.ComponentModel.DataAnnotations
 @{
@@ -65,20 +66,45 @@
                 <div class="col mx-auto">
                     <!-- List group-->
                     <ul class="list-group shadow">
-                        @foreach (var product in Model.ElectricGuitars)
+                        @foreach (var product in Model.Products)
                         {
                             <!-- list group item-->
                             <li class="list-group-item">
                                 <!-- Custom content-->
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                     <div class="media-body order-2 order-lg-1">
-                                        <h5 class="mt-0 font-weight-bold mb-2">@product.Title</h5>
+                                        <a class="mt-0 font-weight-bold mb-2" asp-action="Edit" asp-controller="ElectricGuitar" asp-route-id="@product.Id">@product.Title</a>
                                         <p class="font-italic text-muted mb-0 small">@product.Description</p>
-                                        <p class="font-italic text-muted mb-0 small">Type: @product.Type.GetDisplayName()</p>
+                                        <p class="font-italic text-muted mb-0 small">Brand: @product.Firm.Title</p>
+                                        @if (product is ElectricGuitar)
+                                        {
+                                            var concreteProduct = product as ElectricGuitar;
+                                            <p class="font-italic text-muted mb-0 small">Type of electric guitar: @concreteProduct.Type.GetDisplayName()</p>
+                                        }
+                                        else if (product is AcousticGuitar)
+                                        {
+                                            var concreteProduct = product as AcousticGuitar;
+                                            <p class="font-italic text-muted mb-0 small">With pickup: @(concreteProduct.WithPickup ? "Yes" : "No") </p>
+                                        }
+                                        else if (product is Drum)
+                                        {
+                                            var concreteProduct = product as Drum;
+                                            <p class="font-italic text-muted mb-0 small">Type of drums: @concreteProduct.Type.GetDisplayName()</p>
+                                        }
+                                        else if (product is Synthesizer)
+                                        {
+                                            var concreteProduct = product as Synthesizer;
+                                            <p class="font-italic text-muted mb-0 small">Type of synthesizer: @concreteProduct.Type.GetDisplayName()</p>
+                                        }
+                                        else if (product is DigitalPiano)
+                                        {
+                                            var concreteProduct = product as DigitalPiano;
+                                            <p class="font-italic text-muted mb-0 small">Type of digital piano: @concreteProduct.Type.GetDisplayName()</p>
+                                        }
                                         <div class="d-flex align-items-center justify-content-between mt-1">
                                             <h6 class="font-weight-bold my-2">$@product.Cost</h6>
                                         </div>
-                                    </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                                    </div><img src="@product.PhotoUrl" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
                                 </div> <!-- End -->
                             </li>
                         }
