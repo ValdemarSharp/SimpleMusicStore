@@ -1,4 +1,9 @@
-﻿header{
+﻿.navbar-brand img{
+	width: 70px;
+	height: 55px;
+} 
+
+header{
 	height: 76px;
 }
 
@@ -8,6 +13,7 @@ footer{
     width: 100%;
 }
 
+/* Small devices*/
 @media (min-width: 1200px) {
 
   /* Pull out the header and footer */

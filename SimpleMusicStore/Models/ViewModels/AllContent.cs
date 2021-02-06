@@ -10,5 +10,7 @@ namespace SimpleMusicStore.Models.ViewModels
     {
         public List<Firm> Firms { get; set; }
         public List<Product> Products { get; set; }
+
+        public List<ElectricGuitar> ElectricGuitars { get; set; }
     }
 }
