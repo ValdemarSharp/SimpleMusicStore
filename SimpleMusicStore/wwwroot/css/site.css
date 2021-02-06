@@ -26,3 +26,9 @@ footer{
 .content-fullwindow-container{
 	min-height: 100vh;;
 }
+
+.carousel-caption{
+	top: 50%;
+	transform: translateY(-50%);
+	bottom: initial;
+}

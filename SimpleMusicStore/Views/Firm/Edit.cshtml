@@ -1,0 +1,29 @@
+﻿@using SimpleMusicStore.Models.Enums
+@model SimpleMusicStore.Models.Firm
+@{
+    ViewBag.Title = "Редактирование музыкального бренда";
+}
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+<div class="container py-2 content-fullwindow-container">
+    <h2 class="text-center font-weight-light">Редактирование музыкального бренда</h2>
+    <form asp-action="edit" asp-controller="ElectricGuitar" asp-route-id="@Model.Id">
+        <div class="form-group">
+            <label asp-for="Title" class="control-label">Название</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label">Описание</label>
+            <textarea rows="5" type="text" asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <input asp-action="Edit" type="submit" value="Сохранить" class="btn btn-success" />
+            <input asp-controller="Home" asp-action="Index" type="submit" value="Отмена" class="btn btn-light" />
+        </div>
+    </form>
+</div>

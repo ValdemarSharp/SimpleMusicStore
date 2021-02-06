@@ -16,9 +16,20 @@ namespace SimpleMusicStore.Models.Repos
             
         }
 
+        public Task<Firm> GetAsync(int id)
+        {
+            return _context.Firms.FirstOrDefaultAsync(eguitar => eguitar.Id == id);
+        }
+
         public Task<List<Firm>> GetAllAsync()
         {
             return _context.Firms.ToListAsync();
+        }
+
+        public async Task UpdateAsync(Firm item)
+        {
+            _context.Firms.Update(item);
+            await _context.SaveChangesAsync();
         }
     }
 }
