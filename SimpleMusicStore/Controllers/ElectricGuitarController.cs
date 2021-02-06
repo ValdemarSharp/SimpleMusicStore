@@ -21,7 +21,6 @@ namespace SimpleMusicStore.Controllers
             _electricGuitarRepo = new ElectricGuitarRepository(_musicStoreContext);
         }
 
-        // GET: ElectricGuitarController/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id != null)
@@ -33,7 +32,6 @@ namespace SimpleMusicStore.Controllers
             return NotFound();
         }
 
-        // POST: ElectricGuitarController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(ElectricGuitar item)

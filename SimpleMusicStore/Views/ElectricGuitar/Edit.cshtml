@@ -1,10 +1,14 @@
 ﻿@using SimpleMusicStore.Models.Enums
 @model SimpleMusicStore.Models.MusicalInstruments.ElectricGuitar
 @{
-   ViewBag.Title = "Редактирование товара";
+    ViewBag.Title = "Редактирование товара";
 }
 
-<div class="container py-2 content-custom-container">
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+<div class="container py-2 content-fullwindow-container">
     <h2 class="text-center font-weight-light">Редактирование товара</h2>
     <form asp-action="edit" asp-controller="ElectricGuitar" asp-route-id="@Model.Id">
         <div class="form-group">

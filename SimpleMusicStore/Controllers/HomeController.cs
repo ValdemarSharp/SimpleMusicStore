@@ -23,6 +23,23 @@ namespace SimpleMusicStore.Controllers
         public HomeController(MusicStoreContext context)
         {
             _musicStoreContext = context;
+             CreateAllDbRepos();
+        }
+        public async Task<IActionResult> Index()
+        {
+            var allProducts = await GetAllProductsAsync();
+            var allFirms = await _firmRepo.GetAllAsync();
+
+            var result = new AllContent
+            {
+                Products = allProducts,
+                Firms = allFirms
+            };
+            return View(result);
+        }
+
+        private void CreateAllDbRepos()
+        {
             _firmRepo = new FirmRepository(_musicStoreContext);
             _productRepo = new ProductRepository(_musicStoreContext);
             _electricGuitarRepo = new ElectricGuitarRepository(_musicStoreContext);
@@ -31,7 +48,8 @@ namespace SimpleMusicStore.Controllers
             _synthesizerRepo = new SynthesizerRepository(_musicStoreContext);
             _digitalPianoRepo = new DigitalPianoRepository(_musicStoreContext);
         }
-        public async Task<IActionResult> Index()
+
+        private async Task<List<Product>> GetAllProductsAsync()
         {
             var electricGuitars = await _electricGuitarRepo.GetAllAsync();
             var acousticGuitars = await _acousticGuitarRepo.GetAllAsync();
@@ -40,13 +58,7 @@ namespace SimpleMusicStore.Controllers
             var digitalPianos = await _digitalPianoRepo.GetAllAsync();
             var allProducts = new List<Product>();
             allProducts = allProducts.Concat(electricGuitars).Concat(acousticGuitars).Concat(synthesizers).Concat(drums).Concat(digitalPianos).ToList();
-
-            var result = new AllContent
-            {
-                Products = allProducts,
-                Firms = await _firmRepo.GetAllAsync()
-            };
-            return View(result);
+            return allProducts;
         }
     }
 }
