@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - WebApplication2</title>
     <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -13,7 +14,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                     <img src="http://logodesignbuy.com/wp-content/uploads/2013/12/music-store.gif" alt="http://placehold.it/100x100?text=Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +42,20 @@
             </div>
         </nav>
     </header>
-            
+
+    <div class="mySideNav">
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a></li>
+                <li><a href="#"><i class="fab fa-github"></i><span>Github</span></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
     @RenderBody()
 
     <footer class="bg-light text-center text-lg-start">
