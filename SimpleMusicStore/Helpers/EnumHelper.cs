@@ -7,6 +7,11 @@
 
     public static class EnumHelper
     {
+        /// <summary>
+        /// Отображает юзер-френдли  значение перечисления, которое задаётся с помощь атрибута
+        /// </summary>
+        /// <param name="enumValue"></param>
+        /// <returns></returns>
         public static string GetDisplayName(this Enum enumValue)
         {
             string result;

@@ -1,14 +1,19 @@
 ﻿using SimpleMusicStore.Models.Enums;
 using SimpleMusicStore.Models.MusicalInstruments;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SimpleMusicStore.Models.Services
 {
+    /// <summary>
+    /// Служит для создания и заполнения БД
+    /// </summary>
     public static class DbInitializeService
     {
+        /// <summary>
+        /// Создаёт и заполняет БД сущностями
+        /// </summary>
+        /// <param name="context"></param>
         public static void Initialize(MusicStoreContext context)
         {
             if (!context.Firms.Any())
