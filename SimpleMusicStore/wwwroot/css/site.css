@@ -29,6 +29,12 @@ footer{
   }
 }
 
+@media screen and (max-width: 300px) {
+  .media img{
+  	display: none;
+  }
+}
+
 .content-fullwindow-container{
 	min-height: 100vh;;
 }
@@ -39,10 +45,10 @@ footer{
 	bottom: initial;
 }
 
-
-
----------------------
-
+.my-img-responsive{
+	max-width: 20vw;
+	margin: 10px;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
