@@ -23,6 +23,12 @@ footer{
   }
 }
 
+@media screen and (max-width: 1300px) {
+  .mySideNav{
+  	display: none;
+  }
+}
+
 .content-fullwindow-container{
 	min-height: 100vh;;
 }
